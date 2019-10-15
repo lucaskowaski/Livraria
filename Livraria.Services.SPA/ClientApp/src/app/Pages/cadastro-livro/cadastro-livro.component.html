@@ -1,0 +1,37 @@
+<h2 class="mb-3">Cadastro</h2>
+<div *ngIf="errorMessage" class="alert alert-danger">
+  {{errorMessage}}
+</div>
+<div *ngIf="sucessMessage" class="alert alert-success">
+  {{sucessMessage}}
+</div>
+<form (ngSubmit)="save(form)" #form="ngForm">
+  <div class="row">
+    <div class="col-md-6 form-group">
+      <label class="label">Título</label>
+      <input #titulo="ngModel" [(ngModel)]="livro.titulo" name="titulo" required type="text" class="form-control">
+      <input-errors [field]="titulo"></input-errors>
+    </div>
+    <div class="col-md-6 form-group">
+      <label class="label">Autor</label>
+      <input #autor="ngModel" [(ngModel)]="livro.autor" name="autor" required type="text" class="form-control">
+      <input-errors [field]="autor"></input-errors>
+    </div>
+    <div class="col-md-6 form-group">
+      <label class="label">Idioma</label>
+      <input #idioma="ngModel" [(ngModel)]="livro.idioma" name="idioma" required type="text" class="form-control">
+      <input-errors [field]="idioma"></input-errors>
+    </div>
+    <div class="col-md-6 form-group">
+      <label class="label">Ano de Publicação</label>
+      <input mask="0000" [validation]="false" typenumber #anoPublicacao="ngModel" [(ngModel)]="livro.anoPublicacao" name="anoPublicacao" required type="text" class="form-control">
+      <input-errors [field]="anoPublicacao"></input-errors>
+    </div>
+    <div class="col-md-6 form-group">
+      <label class="label">Número de Páginas</label>
+      <input mask="09999999" typenumber #numeroPaginas="ngModel" [(ngModel)]="livro.numeroPaginas" name="numeroPaginas" required type="text" class="form-control">
+      <input-errors [field]="numeroPaginas"></input-errors>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Salvar</button>
+</form>

@@ -1,0 +1,28 @@
+<h2 class="mb-3">Livros</h2>
+
+<a [routerLink]="['/cadastro-livro']" class="btn btn-primary mb-2">Novo</a>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th>Título</th>
+      <th>Autor</th>
+      <th>Idioma</th>
+      <th>Ano de Publicação</th>
+      <th>Número de Páginas</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let livro of livros">
+      <td>{{livro.titulo}}</td>
+      <td>{{livro.autor}}</td>
+      <td>{{livro.idioma}}</td>
+      <td>{{livro.anoPublicacao}}</td>
+      <td>{{livro.numeroPaginas}}</td>
+      <td>
+        <button (click)="editar(livro)" type="button" class="btn btn-outline-primary btn-sm mr-2">Editar</button>
+        <button (click)="excluir(livro)" type="button" class="btn btn-outline-danger btn-sm">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
