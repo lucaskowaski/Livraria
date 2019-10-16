@@ -11,9 +11,9 @@ namespace Livraria.Application.Services
         {
             _validator = Activator.CreateInstance<TValidator>();
         }
-        public void Validate(TEntity obj)
+        public void Validate(TEntity obj, string rules = "default")
         {
-            _validator.ValidateAndThrow(obj);
+            _validator.ValidateAndThrow(obj, rules);
         }
         public void ValidateId(int id)
         {

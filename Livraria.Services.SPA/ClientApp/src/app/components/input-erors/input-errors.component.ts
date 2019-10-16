@@ -7,11 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class InputErrorsComponent implements OnInit {
   @Input() field: any;
   messages = {
-    emailvalidator: 'Informe um email válido',
-    cpfvalidator: 'Infome um CPF válido',
-    required: 'Este campo é obrigatório',
-    datevalidator: 'Informe uma data válida',
-    greateragevalidator: 'O cliente precisa ter mais que 18 anos'
+    required: 'Este campo é obrigatório'
   }
   constructor() { }
   ngOnInit() {

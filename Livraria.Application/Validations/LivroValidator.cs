@@ -40,6 +40,11 @@ namespace Livraria.Application.Validations
                 .InclusiveBetween(0, int.MaxValue).WithMessage("O Ano de publicação requer um ano válido");
             RuleFor(l => l.NumeroPaginas)
                 .InclusiveBetween(0, int.MaxValue).WithMessage("O Numero de Páginas requer um numero válido");
+
+            RuleSet("id", () => {
+                RuleFor(x => x.Id)
+                .GreaterThan(0);
+            });
         }
     }
 }

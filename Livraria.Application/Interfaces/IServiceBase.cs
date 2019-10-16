@@ -7,7 +7,7 @@ namespace Livraria.Application.Interfaces
 {
     public interface IServiceBase<TEntity, TValidator> where TValidator : AbstractValidator<TEntity>
     {
-        void Validate(TEntity obj);
+        void Validate(TEntity obj, string rules = "default");
         void ValidateId(int id);
     }
 }

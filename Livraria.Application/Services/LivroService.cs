@@ -29,7 +29,7 @@ namespace Livraria.Application.Services
         public void Update(LivroViewModel livroVm)
         {
             var livro = _mapper.Map<Livro>(livroVm);
-            Validate(livro);
+            Validate(livro, "default,id");
             _livroRepository.Update(livro);
         }
         public LivroViewModel Get(int id)
