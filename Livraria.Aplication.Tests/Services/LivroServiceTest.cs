@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using AutoMapper;
 using FluentAssertions;
 using FluentValidation;
@@ -54,7 +53,7 @@ namespace Livraria.Aplication.Tests.Services
         }
 
         [Test]
-        public void Quando_adicionar_livro_deve_lancar_execao_se_model_for_invalida()
+        public void Quando_adicionar_livro_deve_lancar_excecao_se_model_for_invalida()
         {
             Assert.Throws<ValidationException>(() => LivroService.Add(LivroVmInvalida));
         }
@@ -70,7 +69,7 @@ namespace Livraria.Aplication.Tests.Services
         }
 
         [Test]
-        public void Quando_alterar_deve_lancar_execao_se_model_for_invalida()
+        public void Quando_alterar_deve_lancar_excecao_se_model_for_invalida()
         {
             Assert.Throws<ValidationException>(() => LivroService.Update(LivroVmInvalida));
         }
@@ -94,7 +93,7 @@ namespace Livraria.Aplication.Tests.Services
         }
 
         [Test]
-        public void Quando_deletar_livro_deve_lancar_execao_se_id_for_invalido()
+        public void Quando_deletar_livro_deve_lancar_excecao_se_id_for_invalido()
         {
             Assert.Throws<ArgumentException>(() => LivroService.Remove(0));
         }
